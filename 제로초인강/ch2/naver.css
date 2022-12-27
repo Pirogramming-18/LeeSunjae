@@ -2,3 +2,24 @@
   margin: 0 auto;
   width: 1080px;
 }
+
+#header-search > h1 {
+  width: 280px;
+  display: inline-block;
+} /** header-search의 자식(바로 안에 들어있는)인 h1에 해당 **/
+
+#header-center h1 {
+} /** header-center의 자손들인 h1에 해당**/
+
+#header-search h2 {
+  display: none;
+}
+
+#header-search fieldset {
+  width: 520px;
+  display: inline-block;
+}
+
+.topbar {
+  display: inline-block;
+}
