@@ -201,5 +201,6 @@ nav li {
 
 main {
   background-color: #f2f4f7;
-  overflow: auto;
+  display: inline-block;
+  width: 100%;
 }
