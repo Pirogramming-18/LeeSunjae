@@ -34,8 +34,19 @@ nav li {
   display: inline-block;
 }
 
+.topbar-parent {
+  text-align: right;
+  /* clear: both; */
+}
+
 .topbar {
   display: inline-block;
+  font-size: small;
+  cursor: pointer;
+  color: #888;
+  letter-spacing: -1px;
+  font-size: 15px;
+  line-height: 22px;
 }
 
 .blind {
