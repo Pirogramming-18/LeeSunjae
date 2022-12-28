@@ -14,6 +14,15 @@ body {
     helvetica, "Apple SD Gothic Neo", sans-serif;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
 nav {
   height: 46px;
   border-top: 1px solid #888;
@@ -111,6 +120,8 @@ nav li {
 
 #header-search {
   margin-top: 50px;
+  clear: both;
+  padding-top: 45px;
 }
 
 #header-search a {
@@ -199,30 +210,51 @@ nav li {
   padding: 0 6px;
 }
 
+.inline-block {
+  display: inline-block;
+}
+
 main {
   background-color: #f2f4f7;
   display: inline-block;
   width: 100%;
 }
 
+#main-first-block {
+  display: inline-block;
+  width: 100%;
+}
+
 #main-centered {
-  padding: 8px 10px 0;
+  padding: 8px 10px;
   width: 1100px;
 }
 
 #main-ad {
-  display: inline-block;
+  float: left;
   width: 740px;
   height: 120px;
   background: #555;
+  margin-right: 8px;
+  margin-bottom: 8px;
 }
 
 #main-login {
-  display: inline-block;
+  float: left;
   width: 332px;
   height: 120px;
   vertical-align: top;
   background-color: white;
+  margin-bottom: 8px;
+}
+
+#main-second-block .inline-block:first-child {
+  width: 740px;
+}
+
+#main-second-block .inline-block:last-child {
+  width: 332px;
+  vertical-align: top;
 }
 
 #main-ytn {
@@ -230,6 +262,13 @@ main {
   width: 740px;
   height: 46px;
   background-color: white;
+  margin-right: 8px;
+  margin-bottom: 8px;
+}
+
+#main-ytn h3,
+#main-ytn ol {
+  display: inline-block;
 }
 
 #main-newstand {
@@ -237,12 +276,42 @@ main {
   width: 740px;
   height: 246px;
   background-color: white;
+  margin-right: 8px;
+  margin-bottom: 8px;
+}
+
+#main-newstand h3 {
+  height: 45px;
+  border-bottom: 1px solid #00ab33;
+}
+
+#main-newstand ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#main-newstand li {
+  width: 123px;
+  height: 67px;
+  float: left;
+  border-right: 1px solid #f1f3f6;
+  border-bottom: 1px solid #f1f3f6;
+  text-align: center;
+}
+
+#main-newstand li img {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100px;
 }
 
 #main-weather {
   display: inline-block;
   width: 332px;
   height: 142px;
+  margin-bottom: 8px;
 }
 
 #main-second-ad {
@@ -250,32 +319,43 @@ main {
   width: 332px;
   height: 150px;
   background: #555;
+  margin-bottom: 8px;
 }
 
 #main-category {
-  display: inline-block;
+  float: left;
   width: 740px;
   height: 837px;
   background: white;
+  margin-bottom: 8px;
+  margin-right: 8px;
 }
 
 #main-shopping {
-  display: inline-block;
+  float: left;
   width: 332px;
   height: 837px;
   background: white;
+  margin-bottom: 8px;
+}
+
+#main-third-block,
+#main-fourth-block {
+  display: inline-block;
+  width: 100%;
 }
 
 #main-event {
-  display: inline-block;
+  float: left;
   width: 740px;
   height: 130px;
   background: white;
   vertical-align: top;
+  margin-right: 8px;
 }
 
 #main-third-ad {
-  display: inline-block;
+  float: left;
   width: 332px;
   height: 130px;
   background: #555;
