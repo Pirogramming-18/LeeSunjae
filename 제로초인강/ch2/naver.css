@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 .topbar {
   display: inline-block;
 }
@@ -33,7 +37,8 @@
   background-repeat: no-repeat;
   text-indent: 100%;
   overflow: hidden;
-} /** header-search의 자식(바로 안에 들어있는)인 h1에 해당 **/
+  vertical-align: middle;
+}
 
 #header-search h2 {
   display: none;
@@ -47,8 +52,16 @@
   padding-right: 0; */
   padding: 12px 0 12px 12px;
 
-  border: 2px solid #03cf5d;
-  width: 520px;
-  height: 49px;
+  border: 3px solid #03cf5d;
+  width: 521px;
+  height: 60px;
   display: inline-block;
+  box-sizing: border-box;
+  vertical-align: middle;
+}
+
+#header-search fieldset input {
+  border: none;
+  padding: 0;
+  outline: none;
 }
