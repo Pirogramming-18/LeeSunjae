@@ -65,3 +65,13 @@
   padding: 0;
   outline: none;
 }
+
+#header-search fieldset button {
+  width: 49px;
+  height: 49px;
+  border: none;
+  padding: 0;
+  background: #03cf5d;
+  background-image: url(../ch1/naverimg.png);
+  background-position: -837px -45px;
+}
