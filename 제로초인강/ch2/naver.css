@@ -451,6 +451,7 @@ login-text {
 #main-category-top {
   display: inline-block;
   width: 100%;
+  border-top: 1px solid #ebeef3;
 }
 
 #subject-list,
@@ -458,6 +459,8 @@ login-text {
 #subject-next {
   /* display: inline-block; */
   float: left;
+  height: 45px;
+  padding: 0;
 }
 
 #subject-list {
@@ -477,6 +480,7 @@ login-text {
 
 #subject-list {
   width: 603px;
+  position: relative;
 }
 
 #subject-list ul {
@@ -487,17 +491,51 @@ login-text {
 
 #subject-list li {
   float: left;
+  margin-left: 10px;
+  padding: 14px 7px 0;
+  /* font-weight: 700; */
+  font-size: 14px;
+  font-family: -apple-system, BlinkMacSystemFont, "Malgun Gothic", "맑은 고딕",
+    helvetica, "Apple SD Gothic Neo", sans-serif;
+}
+
+.opacity {
+  opacity: 0.5;
+  background: white;
+}
+
+.opacity.left {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 45px;
+  width: 15px;
+}
+
+.opacity.right {
+  position: absolute;
+  padding-right: 0;
+  top: 0;
+  height: 45px;
+  width: 15px;
+}
+
+#subject-list li.highlight {
+  border-bottom: 3px solid #00c73c;
+  color: #00b336;
+  font-weight: 700;
+  height: 45px;
 }
 
 #subject-all span:last-child {
   position: absolute;
   top: 15px;
-  left: 16px;
-  width: 8px;
+  left: 4px;
+  width: 20px;
   height: 16px;
   background: url(../ch1/naverlogo.png);
   background-repeat: no-repeat;
-  background-position: -218px -257px;
+  background-position: -250px -257px;
 }
 
 #subject-prev span:last-child {
