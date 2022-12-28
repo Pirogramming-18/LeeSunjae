@@ -2,15 +2,27 @@
   box-sizing: border-box;
 }
 
+header {
+  height: 220px;
+}
+
 html,
 body {
   margin: 0;
   padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Malgun Gothic", "맑은 고딕",
+    helvetica, "Apple SD Gothic Neo", sans-serif;
+}
+
+nav {
+  height: 46px;
+  border-top: 1px solid #888;
+  border-bottom: 1px solid #888;
 }
 
 nav ul {
   margin: 0;
-  padding: 0;
+  padding: 0 0 0 4px;
   list-style: none;
 }
 
@@ -20,6 +32,18 @@ nav ul li {
   padding-left: 14px;
   /* font-size: medium; */
   cursor: pointer;
+  font-size: 16px;
+  /* float: left; */
+  display: inline-block;
+}
+
+.nav-divider {
+  /* float: left; */
+  display: inline-block;
+  margin: 18px 16px 0;
+  width: 1px;
+  height: 14px;
+  background: #ebeef3;
 }
 
 #rightnav {
@@ -56,13 +80,38 @@ nav li {
 .center-align {
   margin: 0 auto;
   width: 1080px;
+  position: relative;
 }
+
+#search-ranking {
+  position: absolute;
+  top: 12px;
+  right: 30px;
+  /* margin-right: 50px; */
+  /* margin-right: 100px; */
+}
+
+#rank-number {
+  margin-top: -9px;
+  color: #00ab33;
+  font-size: 16px;
+  display: inline-block;
+}
+
+#rank-word {
+  display: inline-block;
+}
+
 #header-center h1 span {
   display: none;
 }
 
 #header-center h1 {
 } /** header-center의 자손들인 h1에 해당**/
+
+#header-search {
+  margin-top: 50px;
+}
 
 #header-search a {
   text-decoration: none;
