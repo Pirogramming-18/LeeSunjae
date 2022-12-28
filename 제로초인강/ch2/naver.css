@@ -1,29 +1,54 @@
-#header-center {
-  margin: 0 auto;
-  width: 1080px;
-}
-
-#header-search > h1 {
-  width: 280px;
-  display: inline-block;
-} /** header-search의 자식(바로 안에 들어있는)인 h1에 해당 **/
-
-#header-center h1 {
-} /** header-center의 자손들인 h1에 해당**/
-
-#header-search h2 {
-  display: none;
-}
-
-#header-search fieldset {
-  width: 520px;
-  display: inline-block;
-}
-
 .topbar {
   display: inline-block;
 }
 
 .blind {
   display: none;
+}
+
+#header-center {
+  margin: 0 auto;
+  width: 1080px;
+}
+#header-center h1 span {
+  display: none;
+}
+
+#header-center h1 {
+} /** header-center의 자손들인 h1에 해당**/
+
+#header-search a {
+  text-decoration: none;
+}
+
+#header-search > h1 {
+  width: 221px;
+  height: 48px;
+  display: inline-block;
+  background-position: 0px -165px;
+  background-image: url(../ch1/naverimg.png);
+
+  -webkit-background-size: 442px 428px;
+  background-size: 442px 428px;
+  background-repeat: no-repeat;
+  text-indent: 100%;
+  overflow: hidden;
+} /** header-search의 자식(바로 안에 들어있는)인 h1에 해당 **/
+
+#header-search h2 {
+  display: none;
+}
+
+#header-search fieldset {
+  margin-left: 20px;
+  /* padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 10px;
+  padding-right: 0; */
+  padding: 12px 0 12px 12px;
+
+  border: 2px solid #03cf5d;
+  width: 520px;
+  height: 49px;
+  display: inline-block;
 }
