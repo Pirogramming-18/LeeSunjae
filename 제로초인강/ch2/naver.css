@@ -118,7 +118,19 @@ h6 {
   position: absolute;
   top: -15px;
   right: 0;
+  z-index: 100;
 }
+
+#z-example {
+  position: absolute;
+  background: yellow;
+  width: 100px;
+  height: 100px;
+  z-index: 1;
+}
+
+/* 자식은 부모보다 높은 맥락을 가진 객체를 이기지 못한다 */
+/* 형제들끼리만 z인덱스로 서열질가능하다 */
 
 #rank-number {
   margin-top: -9px;
