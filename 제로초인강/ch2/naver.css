@@ -2,6 +2,38 @@
   box-sizing: border-box;
 }
 
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav ul li {
+  color: #03cf5d;
+  font-weight: bold;
+  padding-left: 14px;
+  /* font-size: medium; */
+  cursor: pointer;
+}
+
+#rightnav {
+  display: inline-block;
+}
+
+#rightnav li {
+  color: black;
+}
+
+nav li {
+  display: inline-block;
+}
+
 .topbar {
   display: inline-block;
 }
@@ -10,7 +42,7 @@
   display: none;
 }
 
-#header-center {
+.center-align {
   margin: 0 auto;
   width: 1080px;
 }
@@ -78,6 +110,8 @@
   padding: 0;
   background: #03cf5d;
   background-image: url(../ch1/naverimg.png);
+  /* background-repeat: no-repeat; */
+  /* background-size: 442px 428px; */
   background-position: -837px -45px;
   position: absolute;
   right: 0;
