@@ -447,3 +447,77 @@ login-text {
   height: 130px;
   background: #555;
 }
+
+#main-category-top {
+  display: inline-block;
+  width: 100%;
+}
+
+#subject-list,
+#subject-all,
+#subject-next {
+  /* display: inline-block; */
+  float: left;
+}
+
+#subject-list {
+  width: 603px;
+}
+
+#subject-list,
+#subject-all,
+#subject-next {
+  /* display: inline-block; */
+  position: relative;
+  width: 45px;
+  background: white;
+  border: none;
+  border-left: 3px solid #ebeef3;
+}
+
+#subject-list {
+  width: 603px;
+}
+
+#subject-list ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#subject-list li {
+  float: left;
+}
+
+#subject-all span:last-child {
+  position: absolute;
+  top: 15px;
+  left: 16px;
+  width: 8px;
+  height: 16px;
+  background: url(../ch1/naverlogo.png);
+  background-repeat: no-repeat;
+  background-position: -218px -257px;
+}
+
+#subject-prev span:last-child {
+  position: absolute;
+  top: 15px;
+  left: 16px;
+  width: 8px;
+  height: 16px;
+  background: url(../ch1/naverlogo.png);
+  background-repeat: no-repeat;
+  background-position: -320px 0;
+}
+
+#subject-next span:last-child {
+  position: absolute;
+  top: 15px;
+  left: 16px;
+  width: 8px;
+  height: 16px;
+  background: url(../ch1/naverlogo.png);
+  background-repeat: no-repeat;
+  background-position: -320px -52px;
+}
