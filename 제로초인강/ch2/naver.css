@@ -23,3 +23,7 @@
 .topbar {
   display: inline-block;
 }
+
+.blind {
+  display: none;
+}
