@@ -139,8 +139,8 @@ nav div {
   margin-right: 10px;
 }
 
-.input input:active {
-  background-color: aqua;
+.input input:focus {
+  background-color: rgb(208, 229, 238);
 }
 
 .input .for-what {
