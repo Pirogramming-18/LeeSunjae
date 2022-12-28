@@ -80,6 +80,7 @@ nav div {
 }
 
 #whitebox {
+  /* font-size: 1px; */
   position: absolute;
   top: 70px;
   left: 480px;
@@ -92,14 +93,19 @@ nav div {
 }
 
 #greenbox {
-  background-color: green;
-  margin: 5px 7px;
+  background-color: rgb(11, 181, 11);
+  height: 30px;
+  line-height: 25px;
+  margin: 5px 7px 0px 7px;
   font-size: 3px;
-  justs
+  text-align: center;
+  border: 10px;
+  vertical-align: -10px;
   color: white;
 }
 
 .a {
+  background-color: rgb(11, 181, 11);
   color: white;
   font-size: 5px;
 }
@@ -107,8 +113,18 @@ nav div {
 #whitebox div {
 }
 
+#down {
+  /* position: absolute; */
+  /* top: -0.01px; */
+  /* bottom: 1px; */
+  /* border-top: 5px; */
+}
+
 .smallfont {
-  font-size: 1px;
+  margin: 0 10px;
+  font-size: 3px;
+  border-top: 15px;
+  zoom: 0.7;
   color: black;
 }
 
@@ -123,6 +139,10 @@ nav div {
   margin-right: 10px;
 }
 
+.input input:active {
+  background-color: aqua;
+}
+
 .input .for-what {
   padding-left: 0px;
   font-size: 1px;
@@ -133,6 +153,10 @@ nav div {
 #whitebox a {
   width: 180px;
   height: 30px;
+}
+
+#whitebox div {
+  padding-top: 3px;
 }
 
 /* -------------- */
