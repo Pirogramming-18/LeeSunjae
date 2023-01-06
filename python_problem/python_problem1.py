@@ -9,13 +9,18 @@ while True:
             print('정수를 입력하세요')
         else:
             if 1 <= n <= 3:
-                for i in range(num,num+n):
-                    print(f'playerA : {i+1}')
-                num += n
+                if 31 <= num+n:
+                    for i in range(num,31):
+                        print(f'playerA : {i+1}')
+                    num += n
+                else:
+                    for i in range(num,num+n):
+                        print(f'playerA : {i+1}')
+                    num += n
                 break
             else:
                 print('1,2,3 중 하나를 입력하세요')
-    
+
     if 31 <= num:
         break
 
@@ -27,9 +32,14 @@ while True:
             print('정수를 입력하세요')
         else:
             if 1 <= n_2 <= 3:
-                for i in range(num,num + n_2):
-                    print(f'playerB : {i+1}')
-                num += n_2
+                if 31 <= num+n_2:
+                    for i in range(num,31):
+                        print(f'playerB : {i+1}')
+                    num += n_2
+                else:
+                    for i in range(num,num + n_2):
+                        print(f'playerB : {i+1}')
+                    num += n_2
                 break
             else:
                 print('1,2,3 중 하나를 입력하세요')
