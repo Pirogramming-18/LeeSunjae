@@ -22,6 +22,7 @@ while True:
                 print('1,2,3 중 하나를 입력하세요')
 
     if 31 <= num:
+        print('PlayerB Win!')
         break
 
     while True:
@@ -45,4 +46,5 @@ while True:
                 print('1,2,3 중 하나를 입력하세요')
 
     if 31 <= num:
+        print('PlayerA win!')
         break
