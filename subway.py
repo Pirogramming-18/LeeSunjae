@@ -1,9 +1,11 @@
 import requests
 import random
-from bs4 import BeautifulSoup as bs
+from bs4 import BeautifulSoup
 from pprint import pprint
+from time import sleep
 
 def subway_game() :
+
 
     print('''''')
     print('''＼지~하철 지하철~／＼지~하철 지하철~／
@@ -47,26 +49,26 @@ def subway_game() :
         else:
             print('1~9호선 중 선택하여 주십시오')
 
-        print(f'{last}last')
+        # print(f'{last}last')
         
         response = requests.get(f'https://transit.navitime.com/ko/kr/line/0000000{last}')
         soup = BeautifulSoup(response.text, 'html.parser')
 
         metro_list = [word.get_text() for word in soup.select("body > div:nth-of-type(2) > div > div:nth-of-type(1) > ol > li > a > span.name")]
 
-        try:
-            if turn == 1:
-                station = input(f'{line_num}호선에 해당하는 역을 입력해주세요: ')
-                turn += 1
-                if station in metro_list :
-                    print('#이후로 컴퓨터가 이어나감')
-                    break
-                break
-            else:
-                print('첫번째 턴이 아니므로 컴퓨터가 술래')
-                # 내가 술래가 아니고 컴퓨터부터 시작
-                break
 
-        except:print('트라이문의except')
+        if turn == 1:
+            station = input(f'{line_num}호선에 해당하는 역을 입력해주세요: ')
+            turn += 1
+            if station in metro_list :
+                print('맞았습니다!')
+            else:
+                print('틀렸습니다!!')
+                break
+            break
+        else:
+            print('첫번째 턴이 아니므로 컴퓨터가 술래')
+            # 내가 술래가 아니고 컴퓨터부터 시작
+            break
 
 subway_game()
