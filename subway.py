@@ -36,10 +36,10 @@ def subway_game() :
         last = 0
 
         if turn == 1:
-            line_num = int(input('1호선 ~ 9호선 선택해주세요! : '))
+            line_num = int(input('1호선 ~ 4호선 선택해주세요! : '))
             print(f'{line_num}호선~ {line_num}호선! {line_num}호선!! {line_num}호선!! {line_num}호선!!!')
         else:
-            line_num = random.randint(1,9)
+            line_num = random.randint(1,4)
             print('첫번째 턴이 아니므로 컴퓨터가 술래')
             print(f'이번엔~ 몇호선 ~?? {line_num}호선~ {line_num}호선! {line_num}호선!! {line_num}호선!! {line_num}호선!!!')
 
@@ -84,12 +84,9 @@ def subway_game() :
                 print('틀렸습니다!!')
                 break
         else:
-            print(f'{random.choice(players)}:{random.choice(line_num)}')
-            print(f'{random.choice(players)}:{random.choice(line_num)}')
-            print(f'{random.choice(players)}:{random.choice(line_num)}')
-            print(f'{random.choice(players)}:{random.choice(line_num)}')
-            print(f'{random.choice(players)}:{random.choice(line_num)}')
-            # 내가 술래가 아니고 컴퓨터부터 시작
+            auto_answer = random.sample(metro_list, 4)
+            print('다른 플레이어의 응답 : ',auto_answer)
             break
+            # 내가 술래가 아니고 컴퓨터부터 시작
 
 subway_game()
