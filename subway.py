@@ -22,11 +22,27 @@ def subway_game() :
     print('''''')
     print('''''')
 
+    players = ['윤정', '준서', '홍구', '채원', '선재']
+    players_re = []
+    right_now = []
+    right_now_final = {}
+    players_amount = [2, 4, 6, 8, 10]
+    players_amount_re = []
+    player_dic = {}
+    playersIndex = len(players)-1
+    turn = 1
+
     while True:
-        turn = 1
         last = 0
-        line_num = int(input('1호선 ~ 9호선 선택해주세요! : '))
-        print(f'{line_num}호선~ {line_num}호선! {line_num}호선!! {line_num}호선!! {line_num}호선!!!')
+
+        if turn == 1:
+            line_num = int(input('1호선 ~ 9호선 선택해주세요! : '))
+            print(f'{line_num}호선~ {line_num}호선! {line_num}호선!! {line_num}호선!! {line_num}호선!!!')
+        else:
+            line_num = random.randint(1,9)
+            print('첫번째 턴이 아니므로 컴퓨터가 술래')
+            print(f'이번엔~ 몇호선 ~?? {line_num}호선~ {line_num}호선! {line_num}호선!! {line_num}호선!! {line_num}호선!!!')
+
 
         if line_num == 1:
             last += 5
@@ -49,12 +65,14 @@ def subway_game() :
         else:
             print('1~9호선 중 선택하여 주십시오')
 
-        # print(f'{last}last')
+
         
         response = requests.get(f'https://transit.navitime.com/ko/kr/line/0000000{last}')
         soup = BeautifulSoup(response.text, 'html.parser')
 
         metro_list = [word.get_text() for word in soup.select("body > div:nth-of-type(2) > div > div:nth-of-type(1) > ol > li > a > span.name")]
+
+
 
 
         if turn == 1:
@@ -65,9 +83,12 @@ def subway_game() :
             else:
                 print('틀렸습니다!!')
                 break
-            break
         else:
-            print('첫번째 턴이 아니므로 컴퓨터가 술래')
+            print(f'{random.choice(players)}:{random.choice(line_num)}')
+            print(f'{random.choice(players)}:{random.choice(line_num)}')
+            print(f'{random.choice(players)}:{random.choice(line_num)}')
+            print(f'{random.choice(players)}:{random.choice(line_num)}')
+            print(f'{random.choice(players)}:{random.choice(line_num)}')
             # 내가 술래가 아니고 컴퓨터부터 시작
             break
 
