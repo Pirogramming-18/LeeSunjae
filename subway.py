@@ -31,16 +31,20 @@ def subway_game() :
     player_dic = {}
     playersIndex = len(players)-1
     turn = 1
+    correct_line_num = [1,2,3,4]
 
     while True:
         last = 0
 
         if turn == 1:
-            line_num = int(input('1호선 ~ 4호선 선택해주세요! : '))
+            while True:
+                line_num = int(input('1호선 ~ 4호선 선택해주세요! : '))
+                if line_num in correct_line_num:
+                    break
             print(f'{line_num}호선~ {line_num}호선! {line_num}호선!! {line_num}호선!! {line_num}호선!!!')
         else:
             line_num = random.randint(1,4)
-            print('첫번째 턴이 아니므로 컴퓨터가 술래')
+            print('첫번째 턴이 아니므로 컴퓨터가 호선을 정함')
             print(f'이번엔~ 몇호선 ~?? {line_num}호선~ {line_num}호선! {line_num}호선!! {line_num}호선!! {line_num}호선!!!')
 
 
@@ -52,18 +56,8 @@ def subway_game() :
             last += 8
         elif line_num == 4:
             last += 9
-        elif line_num == 5:
-            last += 10
-        elif line_num == 6:
-            last += 11
-        elif line_num == 7:
-            last += 12
-        elif line_num == 8:
-            last += 14
-        elif line_num == 9:
-            last += 15
         else:
-            print('1~9호선 중 선택하여 주십시오')
+            print('1~4호선 중 선택하여 주십시오')
 
 
         
@@ -76,16 +70,33 @@ def subway_game() :
 
 
         if turn == 1:
-            station = input(f'{line_num}호선에 해당하는 역을 입력해주세요: ')
-            turn += 1
-            if station in metro_list :
-                print('맞았습니다!')
-            else:
-                print('틀렸습니다!!')
-                break
+            while True:
+                station = input(f'{line_num}호선에 해당하는 역을 입력해주세요: ')
+                turn += 1
+                if station in metro_list :
+                    print('맞았습니다!')
+                    auto_answer = random.sample(metro_list, 5)
+                    random.shuffle(players)
+                    print(f'{players[0]} : ',auto_answer[0])
+                    print(f'{players[1]} : ',auto_answer[1])
+                    print(f'{players[2]} : ',auto_answer[2])
+                    print(f'{players[3]} : ',auto_answer[3])
+                    print(f'{players[4]} : ',auto_answer[4])
+                    
+                else:
+                    print('틀렸습니다!! *플레이어 패배*')
+                    print('아 누가 술을 마셔?! 너가 술을 마셔 원~~샷!!')
+                    break
         else:
-            auto_answer = random.sample(metro_list, 4)
-            print('다른 플레이어의 응답 : ',auto_answer)
+            auto_answer = random.sample(metro_list, 5)
+            random.shuffle(players)
+            print(f'{players[0]} : ',auto_answer[0])
+            print(f'{players[1]} : ',auto_answer[1])
+            print(f'{players[2]} : ',auto_answer[2])
+            print(f'{players[3]} : ',auto_answer[3])
+            print(f'{players[4]} : ',auto_answer[4])
+            station = input(f'{line_num}호선에 해당하는 역을 입력해주세요: ')
+
             break
             # 내가 술래가 아니고 컴퓨터부터 시작
 
