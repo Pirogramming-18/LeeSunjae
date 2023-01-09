@@ -68,7 +68,7 @@ def subway_game() :
         metro_list = [word.get_text() for word in soup.select("body > div:nth-of-type(2) > div > div:nth-of-type(1) > ol > li > a > span.name")]
 
 
-
+        answer_list = []
 
         if turn == 1:
             while True:
@@ -76,35 +76,71 @@ def subway_game() :
                 turn += 1
                 if station in metro_list :
                     print('맞았습니다!')
+                    answer_list.append(station)
                     auto_answer = random.sample(metro_list, 5)
                     random.shuffle(players)
                     print(f'{players[0]} : ',auto_answer[0])
+                    if auto_answer[0] in answer_list:
+                        print(f'이미 나왔습니다!! {players[0]} 패배')
+                        print('아 누가 술을 마셔?! 너가 술을 마셔 원~~샷!!')
+                        return players[0]
+                        break
+                    else:
+                        answer_list.append(auto_answer[0])
                     print(f'{players[1]} : ',auto_answer[1])
+                    if auto_answer[1] in answer_list:
+                        print(f'이미 나왔습니다!! {players[1]} 패배')
+                        print('아 누가 술을 마셔?! 너가 술을 마셔 원~~샷!!')
+                        return players[1]
+                        break
+                    else:
+                        answer_list.append(auto_answer[1])
                     print(f'{players[2]} : ',auto_answer[2])
+                    if auto_answer[2] in answer_list:
+                        print(f'이미 나왔습니다!! {players[2]} 패배')
+                        print('아 누가 술을 마셔?! 너가 술을 마셔 원~~샷!!')
+                        return players[2]
+                        break
+                    else:
+                        answer_list.append(auto_answer[2])
                     print(f'{players[3]} : ',auto_answer[3])
+                    if auto_answer[3] in answer_list:
+                        print(f'이미 나왔습니다!! {players[3]} 패배')
+                        print('아 누가 술을 마셔?! 너가 술을 마셔 원~~샷!!')
+                        return players[3]
+                        break
+                    else:
+                        answer_list.append(auto_answer[3])
                     print(f'{players[4]} : ',auto_answer[4])
+                    if auto_answer[4] in answer_list:
+                        print(f'이미 나왔습니다!! {players[4]} 패배')
+                        print('아 누가 술을 마셔?! 너가 술을 마셔 원~~샷!!')
+                        return players[4]
+                        break
+                    else:
+                        answer_list.append(auto_answer[4])
                     
                 else:
                     print('틀렸습니다!! *플레이어 패배*')
                     print('아 누가 술을 마셔?! 너가 술을 마셔 원~~샷!!')
+                    answer_list.clear()
                     break
         else:
             while True:
-                    auto_answer = random.sample(metro_list, 5)
-                    random.shuffle(players)
-                    print(f'{players[0]} : ',auto_answer[0])
-                    print(f'{players[1]} : ',auto_answer[1])
-                    print(f'{players[2]} : ',auto_answer[2])
-                    print(f'{players[3]} : ',auto_answer[3])
-                    print(f'{players[4]} : ',auto_answer[4])
-                    station = input(f'{line_num}호선에 해당하는 역을 입력해주세요: ')
-                    if station in metro_list :
-                        print('맞았습니다!')
-                        break
-                    else:
-                        print('틀렸습니다!! *플레이어 패배*')
-                        print('아 누가 술을 마셔?! 너가 술을 마셔 원~~샷!!')
-                        break
+                auto_answer = random.sample(metro_list, 5)
+                random.shuffle(players)
+                print(f'{players[0]} : ',auto_answer[0])
+                print(f'{players[1]} : ',auto_answer[1])
+                print(f'{players[2]} : ',auto_answer[2])
+                print(f'{players[3]} : ',auto_answer[3])
+                print(f'{players[4]} : ',auto_answer[4])
+                station = input(f'{line_num}호선에 해당하는 역을 입력해주세요: ')
+                if station in metro_list :
+                    print('맞았습니다!')
+                else:
+                    print('틀렸습니다!! *플레이어 패배*')
+                    print('아 누가 술을 마셔?! 너가 술을 마셔 원~~샷!!')
+                    answer_list.clear()
                     break
 
 subway_game()
