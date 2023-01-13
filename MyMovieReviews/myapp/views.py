@@ -64,6 +64,12 @@ def create(request):
         article = '''
             <form action="/create/" method="post">
                 <p><input type="text" name="title" placeholder="영화제목"></p>
+                <p><input type="text" name="year" placeholder="개봉년도"></p>
+                <p><input type="text" name="score" placeholder="평점"></p>
+                <p><input type="text" name="genre" placeholder="장르"></p>
+                <p><input type="text" name="director" placeholder="감독"></p>
+                <p><input type="text" name="time" placeholder="러닝타임"></p>
+                <p><input type="text" name="actor" placeholder="출연"></p>
                 <p><textarea name="body" placeholder="영화 리뷰"></textarea></p>
                 <p><input type="submit"></p>
             </form>
@@ -72,7 +78,13 @@ def create(request):
     elif request.method == 'POST':
         title = request.POST['title']
         body = request.POST['body']
-        newTopic = {"id":nextId, "title":title, "body":body}
+        year = request.POST['year']
+        score = request.POST['score']
+        genre = request.POST['genre']
+        director = request.POST['director']
+        time = request.POST['time']
+        actor = request.POST['actor']
+        newTopic = {"id":nextId, "title":title, "body":body, 'year':year, 'score':score, 'genre':genre ,'director':director ,'time':time, 'actor':actor}
         url = '/read/' + str(nextId)
         nextId = nextId + 1
         topics.append(newTopic)
@@ -98,11 +110,23 @@ def update(request,id):
             if topic['id'] == int(id):
                 selectedTopic = {
                     "title":topic['title'],
-                    "body":topic['body']
+                    "body":topic['body'],
+                    "year":topic['year'],
+                    "score":topic['score'],
+                    "genre":topic['genre'],
+                    "director":topic['director'],
+                    "time":topic['time'],
+                    "actor":topic['actor']
                 }
         article = f'''
             <form action="/update/{id}/" method="post">
                 <p><input type="text" name="title" placeholder="title" value={selectedTopic["title"]}></p>
+                <p><input type="text" name="year" placeholder="year" value={selectedTopic["year"]}></p>
+                <p><input type="text" name="score" placeholder="score" value={selectedTopic["score"]}></p>
+                <p><input type="text" name="genre" placeholder="genre" value={selectedTopic["genre"]}></p>
+                <p><input type="text" name="director" placeholder="director" value={selectedTopic["director"]}></p>
+                <p><input type="text" name="time" placeholder="time" value={selectedTopic["time"]}></p>
+                <p><input type="text" name="actor" placeholder="actor" value={selectedTopic["actor"]}></p>
                 <p><textarea name="body" placeholder="body">{selectedTopic['body']}</textarea></p>
                 <p><input type="submit"></p>
             </form>
@@ -111,8 +135,20 @@ def update(request,id):
     elif request.method == 'POST':
         title = request.POST['title']
         body = request.POST['body']
+        year = request.POST['year']
+        score = request.POST['score']
+        genre = request.POST['genre']
+        director = request.POST['director']
+        time = request.POST['time']
+        actor = request.POST['actor']
         for topic in topics:
             if topic['id'] == int(id):
                 topic['title'] = title
                 topic['body'] = body
+                topic['year'] = year
+                topic['score'] = score
+                topic['genre'] = genre
+                topic['director'] = director
+                topic['time'] = time
+                topic['actor'] = actor
         return redirect(f'/read/{id}')
