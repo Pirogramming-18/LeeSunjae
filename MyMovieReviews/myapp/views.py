@@ -5,9 +5,9 @@ from django.views.decorators.csrf import csrf_exempt
 
 nextId = 4
 topics = [
-    {'id':1, 'title':'routing', 'body':'Routing is ..'},
-    {'id':2, 'title':'view', 'body':'View is ..'},
-    {'id':3, 'title':'Model', 'body':'Model is ..'},
+    {'id':1, 'title':'루카', 'body':'루카 내용'},
+    {'id':2, 'title':'소울', 'body':'소울 내용'},
+    {'id':3, 'title':'라야와 마지막 드래곤', 'body':'라야 내용'},
 ]
 
 def HTMLTemplate(articleTag, id=None):
@@ -18,10 +18,10 @@ def HTMLTemplate(articleTag, id=None):
             <li>
                 <form action="/delete/" method="post">
                     <input type="hidden" name="id" value={id}>
-                    <input type="submit" value="delete">
+                    <input type="submit" value="삭제하기">
                 </form>
             </li>
-            <li><a href="/update/{id}">update</a></li>
+            <li><a href="/update/{id}">수정하기</a></li>
         '''
     ol = ''
     for topic in topics:
@@ -29,13 +29,13 @@ def HTMLTemplate(articleTag, id=None):
     return f'''
     <html>
     <body>
-        <h1><a href="/">Django</a></h1>
+        <h1><a href="/">MYMovieReviews</a></h1>
         <ol>
             {ol}
         </ol>
         {articleTag}
         <ul>
-            <li><a href="/create/">create</a></li>
+            <li><a href="/create/">생성하기</a></li>
             {contextUI}
         </ul>
     </body>
@@ -44,8 +44,8 @@ def HTMLTemplate(articleTag, id=None):
 
 def index(request):
     article = '''
-    <h2>Welcome</h2>
-    Hello, Django
+    <h2>영화리뷰입니다</h2>
+    리뷰는 생성,삭제,수정 가능합니다
     '''
     return HttpResponse(HTMLTemplate(article))
 
