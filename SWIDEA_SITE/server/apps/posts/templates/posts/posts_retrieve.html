@@ -1,0 +1,26 @@
+{% load static %}
+
+<h1>{{postdatas.title}}</h1>
+<br />
+{% if postdatas.image %}
+<p>
+  <img src="{{ postdatas.image.url }}" />
+</p>
+{% endif %}
+<small>1)아이디어 관심도 : {{postdatas.price}}</small>
+<br /><br />
+<small>2)예상 개발툴 : {{postdatas.interest}}</small>
+<br />
+
+<br />
+<small> 3)아이디어 설명 : {{postdatas.content}} </small>
+<br />
+
+<hr />
+<a href="/posts/{{postdatas.id}}/update">수정</a>
+<form action="/posts/{{ postdatas.id }}/delete" method="post">
+  {% csrf_token %}
+  <input type="submit" value="삭제" />
+</form>
+<hr />
+<a href="/">목록</a>

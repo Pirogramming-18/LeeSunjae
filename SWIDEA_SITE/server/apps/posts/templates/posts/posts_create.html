@@ -1,0 +1,23 @@
+<h4>Idea register</h4>
+<h5>아이디어 등록페이지입니다 당신의 아이디어를 잊지말고 기록하세요!</h5>
+
+<form action="/posts/create" method="post" enctype="multipart/form-data">
+  {% csrf_token %} 아이디어 명 : <input name="title" placeholder="" />
+  <br />
+  img : <input type="file" name="image" />
+  <br />
+  예상 개발 툴 :
+  <select name="interest">
+    <option value="">-----</option>
+    <option value="django">django</option>
+    <option value="react">react</option>
+    <option value="vue">vue</option>
+  </select>
+  <br />
+  아이디어 관심도 : <input name="price" placeholder="" type="number" />
+  <br />
+  아이디어 내용 : <textarea name="content" placeholder=""></textarea>
+  <div>
+    <input type="submit" value="submit" />
+  </div>
+</form>

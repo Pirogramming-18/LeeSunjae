@@ -1,0 +1,28 @@
+<h1>글 수정하기</h1>
+
+<form action="/posts/{{post.id}}/update" method="post">
+  {% csrf_token %}
+  <input name="title" placeholder="아이디어명" value="{{ post.title }}" />
+  <br />
+  <input type="file" name="image" />
+  <br />
+  <select name="interest" value="{{ post.interest }}">
+    <option value="{{ post.interest }}">{{ post.interest }}</option>
+    <option value="django">django</option>
+    <option value="react">react</option>
+    <option value="vue">vue</option>
+  </select>
+  <!-- <input name="region" placeholder="지역" value="{{ post.region }}" /> -->
+  <br />
+  <input
+    name="price"
+    placeholder="아이디어 관심도"
+    type="number"
+    value="{{ post.price }}"
+  />
+  <br />
+  <textarea name="content" placeholder="게시글 내용">{{post.content}}</textarea>
+  <div>
+    <input type="submit" value="저장하기" />
+  </div>
+</form>

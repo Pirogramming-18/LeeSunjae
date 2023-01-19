@@ -1,0 +1,22 @@
+{% load static %}
+
+<head>
+  <!-- <link rel="stylesheet" href="static/css/list.css"> -->
+  <!-- <link rel="stylesheet" href="{% static 'css/list.css' %}" /> -->
+</head>
+
+<a href="/posts/create">아이디어 등록</a>
+<hr />
+<p>idea List</p>
+<p>아이디어를 잊지말고 기록해보세요</p>
+{% for post in postdatas %}
+<p><a href="/posts/{{ post.pk }}">{{post.title}}</a></p>
+<small>예상 개발 툴 : {{ post.interest}} </small><br />
+<small>아이디어 관심도 : {{ post.price}} </small>
+{% if post.image %}
+<p>
+  <img src="{{ post.image.url }}" />
+</p>
+{% endif %}
+<hr />
+{% endfor %}
